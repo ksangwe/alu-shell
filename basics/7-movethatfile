@@ -1,2 +1,5 @@
 #!/bin/bash
-mv /tmp/betty /tmp/my_first_directory/
+# Check if the file exists before moving
+if [ -f /tmp/betty ]; then
+    mv /tmp/betty /tmp/my_first_directory/
+fi
