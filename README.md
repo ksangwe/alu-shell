@@ -1,2 +1,5 @@
-Shell, processes and signals project
+# Shell, processes and signals
+
+This project covers Linux processes, PIDs, and signals.
+
 
