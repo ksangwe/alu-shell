@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script creates a PID file and handles signals
+
+PIDFILE="/var/run/myscript.pid"
+
+echo $$ | sudo tee "$PIDFILE" > /dev/null
+
+trap 'echo "Y U no love me?!"' SIGINT
+
+trap 'echo "I hate the kill command"; sudo rm -f "$PIDFILE"; exit' SIGTERM
+
+trap 'sudo rm -f "$PIDFILE"; exit' SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 1
+done
+
