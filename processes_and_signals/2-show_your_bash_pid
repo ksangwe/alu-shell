@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# This script displays all processes containing the word "bash" to find the Bash PID
+# This script displays the PID and process info of all bash processes
 # shellcheck disable=SC2009
 
-ps -f | grep bash
+ps -f | grep bash | grep -v grep
 

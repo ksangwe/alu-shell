@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# Stops 4-to_infinity_and_beyond process
-kill "$(pgrep -f 4-to_infinity_and_beyond)"
+# This script stops the 4-to_infinity_and_beyond process using kill
+# shellcheck disable=SC2009
+
+kill $(ps -ef | grep 4-to_infinity_and_beyond | grep -v grep | awk '{print $2}')
 
